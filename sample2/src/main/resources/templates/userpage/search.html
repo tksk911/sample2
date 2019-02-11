@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="search" method="post">
+		<input name="searchword" />
+		<button type="submit">検索</button>
+	</form>
+	<form action="regist" method="post">
+		<button type="submit">登録</button>
+		<ul>
+			<li th:each="result:${resultList}">
+				<input type="checkbox" name="key" th:value="${result.key}" /> 
+				タイトル <th:block th:text="${result.title}" /></th:block> 
+				<img th:src="${result.thumbnails}" /></li>
+		</ul>
+	</form>
+	<div th:text="${error}"></div>
+</body>
+</html>
