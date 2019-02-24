@@ -13,9 +13,10 @@
 		<button type="submit">登録</button>
 		<ul>
 			<li th:each="result:${resultList}">
-				<input type="checkbox" name="key" th:value="${result.key}" /> 
-				タイトル <th:block th:text="${result.title}" /></th:block> 
-				<img th:src="${result.thumbnails}" /></li>
+				<input type="checkbox" name="titthum" th:value="${result.titthum}"/> 
+				タイトル <th:block name="title" th:text="${result.title}" /></th:block>
+				<img name="thumbnails" th:src="${result.thumbnails}" />
+			</li>
 		</ul>
 	</form>
 	<div th:text="${error}"></div>

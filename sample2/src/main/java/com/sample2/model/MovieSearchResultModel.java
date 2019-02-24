@@ -5,7 +5,10 @@ public class MovieSearchResultModel {
 	private String kind;
 	private String title;
 	private String thumbnails;
-	private String key;
+	private StringBuilder titthum = new StringBuilder();
+	//private Map<String, String> movieMap = new HashMap<>();
+	//private String key;
+	//public String key;
 	
 	public String getKind() {
 		return kind;
@@ -31,12 +34,30 @@ public class MovieSearchResultModel {
 		this.thumbnails = thumbnails;
 	}
 	
-	public String getkey() {
-		return key;
+	public void setTitthum(String title,String thumbnails) {
+		this.titthum.append(title);
+		this.titthum.append("\n");
+		this.titthum.append(thumbnails);
 	}
 	
-	public void setKey(String key) {
-		this.key = key;
+	public StringBuilder getTitthum() {
+		return titthum;
 	}
 	
+//	public Map<String, String> getMovieMap(){
+//		return movieMap;
+//	}
+//	
+//	public void setMovieMap(String title,String thumbnails) {
+//		this.movieMap.put(thumbnails, title);
+//	}
+//	
+//	public String getkey() {
+//		return key;
+//	}
+//	
+//	public void setKey(String key) {
+//		this.key = key;
+//	}
+
 }
